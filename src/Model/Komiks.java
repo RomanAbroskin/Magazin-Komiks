@@ -1,6 +1,8 @@
 package Model;
 
-public class Komiks {
+import java.io.Serializable;
+
+public class Komiks implements Serializable {
    private static int count=0;
    private int id;
 
@@ -34,6 +36,43 @@ public class Komiks {
    private int GodIsdania;
    private int Sibestoimost;
    private int CenaProdagi;
+
+   public void setNameKomics(String nameKomics) {
+      NameKomics = nameKomics;
+   }
+
+   public void setFioAvtors(String fioAvtors) {
+      FioAvtors = fioAvtors;
+   }
+
+   public void setNameIsdatel(String nameIsdatel) {
+      NameIsdatel = nameIsdatel;
+   }
+
+   public void setKolichestvoStronic(int kolichestvoStronic) {
+      KolichestvoStronic = kolichestvoStronic;
+   }
+
+   public void setGhanrKomiks(String ghanrKomiks) {
+      GhanrKomiks = ghanrKomiks;
+   }
+
+   public void setGodIsdania(int godIsdania) {
+      GodIsdania = godIsdania;
+   }
+
+   public void setSibestoimost(int sibestoimost) {
+      Sibestoimost = sibestoimost;
+   }
+
+   public void setCenaProdagi(int cenaProdagi) {
+      CenaProdagi = cenaProdagi;
+   }
+
+   public void setProdolgenieKomiks(boolean prodolgenieKomiks) {
+      ProdolgenieKomiks = prodolgenieKomiks;
+   }
+
    private boolean ProdolgenieKomiks;
 
    public String getNameKomics() {

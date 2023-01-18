@@ -1,6 +1,8 @@
 package Model;
 
-public class Uzer {
+import java.io.Serializable;
+
+public class Uzer implements Serializable {
 
     private static int count=0;
 private int id;
@@ -9,6 +11,14 @@ private int id;
         this.NickName = nickName;
         this.Password = password;
         this.id = ++count;
+    }
+
+    public void setNickName(String nickName) {
+        NickName = nickName;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     public int getId() {
