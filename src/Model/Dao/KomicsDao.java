@@ -1,4 +1,6 @@
-package Model;
+package Model.Dao;
+
+import Model.Komiks;
 
 import java.util.List;
 

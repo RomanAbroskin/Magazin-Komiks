@@ -12,8 +12,6 @@ public class Komiks {
       return id;
    }
 
-
-
    private String NameKomics;
    private String FioAvtors;
    private String NameIsdatel;

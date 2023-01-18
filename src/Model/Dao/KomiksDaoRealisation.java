@@ -1,6 +1,7 @@
-package Model;
+package Model.Dao;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class KomiksDaoRealisation  {
 
@@ -23,9 +24,6 @@ public class KomiksDaoRealisation  {
     public List<Komiks> getAll() {
         return null;
     }*/
-
-
-
 
 
 }
