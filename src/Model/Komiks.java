@@ -3,7 +3,7 @@ package Model;
 import java.io.Serializable;
 
 public class Komiks implements Serializable {
-   private static int count=0;
+   private transient static int count=0;
    private int id;
 
    public static int getCount() {
@@ -32,6 +32,10 @@ public class Komiks implements Serializable {
       ProdolgenieKomiks = prodolgenieKomiks;
    }
 
+   public Komiks(String nameKomics) {
+      NameKomics = nameKomics;
+   }
+
    private String GhanrKomiks;
    private int GodIsdania;
    private int Sibestoimost;
@@ -55,6 +59,22 @@ public class Komiks implements Serializable {
 
    public void setGhanrKomiks(String ghanrKomiks) {
       GhanrKomiks = ghanrKomiks;
+   }
+
+   @Override
+   public String toString() {
+      return "Komiks{" +
+              "id=" + id +
+              ", NameKomics='" + NameKomics + '\'' +
+              ", FioAvtors='" + FioAvtors + '\'' +
+              ", NameIsdatel='" + NameIsdatel + '\'' +
+              ", KolichestvoStronic=" + KolichestvoStronic +
+              ", GhanrKomiks='" + GhanrKomiks + '\'' +
+              ", GodIsdania=" + GodIsdania +
+              ", Sibestoimost=" + Sibestoimost +
+              ", CenaProdagi=" + CenaProdagi +
+              ", ProdolgenieKomiks=" + ProdolgenieKomiks +
+              '}';
    }
 
    public void setGodIsdania(int godIsdania) {

@@ -3,8 +3,16 @@ package Model;
 import java.io.Serializable;
 
 public class Uzer implements Serializable {
+    @Override
+    public String toString() {
+        return "Uzer{" +
+                "id=" + id +
+                ", NickName='" + NickName + '\'' +
+                ", Password='" + Password + '\'' +
+                '}';
+    }
 
-    private static int count=0;
+    private transient static int count=0;
 private int id;
 
     public Uzer(String nickName, String password) {
