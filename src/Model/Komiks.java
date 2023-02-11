@@ -1,23 +1,24 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Komiks implements Serializable {
-   private transient static int count=0;
-   private int id;
-
-   public static int getCount() {
+   private transient static   int count=0;
+   private final int id;
+   public static   int getCount() {
       return count;
    }
-
    public int getId() {
       return id;
    }
-
    private String NameKomics;
    private String FioAvtors;
    private String NameIsdatel;
+   private final Date date;
    private int KolichestvoStronic;
+   private final SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
 
    public Komiks(String nameKomics, String fioAvtors, String nameIsdatel, int kolichestvoStronic, String ghanrKomiks, int godIsdania, int sibestoimost, int cenaProdagi, boolean prodolgenieKomiks) {
       this.id =++count;
@@ -30,17 +31,18 @@ public class Komiks implements Serializable {
       Sibestoimost = sibestoimost;
       CenaProdagi = cenaProdagi;
       ProdolgenieKomiks = prodolgenieKomiks;
+      this. date = new Date();
    }
-
-   public Komiks(String nameKomics) {
-      NameKomics = nameKomics;
-   }
-
+   /*public Date getDate() {
+      return date;
+   }*/
    private String GhanrKomiks;
+
+
+
    private int GodIsdania;
    private int Sibestoimost;
    private int CenaProdagi;
-
    public void setNameKomics(String nameKomics) {
       NameKomics = nameKomics;
    }
@@ -60,23 +62,21 @@ public class Komiks implements Serializable {
    public void setGhanrKomiks(String ghanrKomiks) {
       GhanrKomiks = ghanrKomiks;
    }
-
    @Override
    public String toString() {
-      return "Komiks{" +
-              "id=" + id +
-              ", NameKomics='" + NameKomics + '\'' +
+      return format.format(date)+
+         "  NameKomics='" + NameKomics + '\'' +
               ", FioAvtors='" + FioAvtors + '\'' +
               ", NameIsdatel='" + NameIsdatel + '\'' +
-              ", KolichestvoStronic=" + KolichestvoStronic +
+              ", KolichestvoStronic=" + KolichestvoStronic +'\''+
               ", GhanrKomiks='" + GhanrKomiks + '\'' +
-              ", GodIsdania=" + GodIsdania +
-              ", Sibestoimost=" + Sibestoimost +
-              ", CenaProdagi=" + CenaProdagi +
+              ", GodIsdania=" + GodIsdania +'\''+
+              ", Sibestoimost=" + Sibestoimost +'\''+
+              ", CenaProdagi=" + CenaProdagi +'\''+
               ", ProdolgenieKomiks=" + ProdolgenieKomiks +
               '}';
-   }
 
+   }
    public void setGodIsdania(int godIsdania) {
       GodIsdania = godIsdania;
    }

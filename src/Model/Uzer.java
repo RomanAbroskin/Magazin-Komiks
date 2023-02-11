@@ -11,14 +11,16 @@ public class Uzer implements Serializable {
                 ", Password='" + Password + '\'' +
                 '}';
     }
-
     private transient static int count=0;
 private int id;
-
+    public boolean isUzer() {
+        return uzer;
+    }
     public Uzer(String nickName, String password) {
         this.NickName = nickName;
         this.Password = password;
         this.id = ++count;
+        this.uzer = true;
     }
 
     public void setNickName(String nickName) {
@@ -44,5 +46,5 @@ private int id;
     private String NickName;
 private String Password;
 
-
+private final boolean uzer;
 }

@@ -1,17 +1,14 @@
 package Model.Dao;
-
 import Model.Komiks;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class KomiksDaoRealisation implements KomicsDao {
 
+/*public class KomiksDaoRealisation implements KomicsDao {
+
+    private  int id;
 
     private final String fileName;
 
@@ -20,26 +17,42 @@ public class KomiksDaoRealisation implements KomicsDao {
     private static KomiksDaoRealisation instabce=new KomiksDaoRealisation("komics.bin");
 
     public KomiksDaoRealisation(String fileName) {
+
         this.fileName = fileName;
         this.komiks = new ArrayList<>();
         try (ObjectInputStream ImputStream=new ObjectInputStream(new FileInputStream(fileName))){
-           komiks=List<k>
-        }catch (IOException ex){
+            komiks=(List<Komiks>) ImputStream.readObject();
+        }catch (IOException | ClassNotFoundException ex){
+            komiks=new ArrayList<>();
+        }
+    }*/
+
+   /* public void save() {
+        try
+                (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(fileName))) {
+            output.writeObject(komiks);
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 
-    public static KomiksDaoRealisation getInstabce(){
+   /* public static KomiksDaoRealisation getInstabce(){
         return instabce;
     }
     public KomicsDao getInstance(){
         return null;
+    }*/
+
+    /*@Override
+    public List<Komiks> getAll() {
+        return null;
     }
 
     @Override
-    public List<Komiks> getAll() {
+    public Komiks getBaId(int id) {
         return null;
     }
 
 
 }
+*/
